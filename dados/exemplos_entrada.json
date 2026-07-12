@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "assunto": "Interesse em crédito para empresa",
+    "mensagem": "Olá, somos da Alfa Comércio LTDA e gostaríamos de entender as opções de crédito para capital de giro. Nosso CNPJ é 12.345.678/0001-99."
+  },
+  {
+    "id": 2,
+    "assunto": "Atualização cadastral",
+    "mensagem": "Bom dia, precisamos atualizar os dados cadastrais da empresa Beta Transportes. Houve alteração no endereço e no quadro societário."
+  },
+  {
+    "id": 3,
+    "assunto": "Documentação pendente",
+    "mensagem": "Prezados, segue o contrato social atualizado da Gama Serviços para continuidade da análise."
+  },
+  {
+    "id": 4,
+    "assunto": "Segunda via",
+    "mensagem": "Boa tarde, poderiam enviar novamente a segunda via do documento referente à nossa operação? Não localizamos o arquivo anterior."
+  },
+  {
+    "id": 5,
+    "assunto": "Suporte técnico",
+    "mensagem": "Vocês fazem manutenção de notebook? Estou procurando assistência técnica."
+  },
+  {
+    "id": 6,
+    "assunto": "URGENTE - Vencimento hoje",
+    "mensagem": "Prezados, nossa operação vence hoje, dia 15/07, e ainda não recebemos o boleto para pagamento. Somos a Delta Logística ME, CNPJ 98.765.432/0001-10. Precisamos resolver isso com urgência para não gerar atraso."
+  },
+  {
+    "id": 7,
+    "assunto": "Dúvida e envio de documento",
+    "mensagem": "Boa tarde, estou enviando o balanço patrimonial da Ômega Indústria conforme solicitado. Aproveitando, gostaria de saber se também é possível avaliar uma linha de crédito para expansão da fábrica."
+  },
+  {
+    "id": 8,
+    "assunto": "Contato",
+    "mensagem": "Oi, tudo bem? Liguei mais cedo mas não consegui falar com ninguém. Podem me retornar?"
+  }
+]
