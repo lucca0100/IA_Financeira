@@ -1,0 +1,10 @@
+[
+  { "id": 1, "tipo_solicitacao": "interesse_em_credito_pj", "confianca_esperada": "alto" },
+  { "id": 2, "tipo_solicitacao": "atualizacao_cadastral", "confianca_esperada": "alto" },
+  { "id": 3, "tipo_solicitacao": "envio_de_documentacao", "confianca_esperada": "alto" },
+  { "id": 4, "tipo_solicitacao": "solicitacao_de_segunda_via", "confianca_esperada": "alto" },
+  { "id": 5, "tipo_solicitacao": "fora_do_escopo", "confianca_esperada": "alto" },
+  { "id": 6, "tipo_solicitacao": "solicitacao_de_segunda_via", "confianca_esperada": "medio" },
+  { "id": 7, "tipo_solicitacao": "interesse_em_credito_pj", "confianca_esperada": "medio" },
+  { "id": 8, "tipo_solicitacao": "pendencia_de_informacao", "confianca_esperada": "baixo" }
+]

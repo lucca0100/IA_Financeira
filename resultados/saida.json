@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "tipo_solicitacao": "interesse_em_credito_pj",
+    "empresa": "Alfa Comércio LTDA",
+    "cnpj": "12.345.678/0001-99",
+    "documentos_identificados": [],
+    "data_mencionada": null,
+    "urgencia": false,
+    "area_sugerida": "Comercial",
+    "proxima_acao": "encaminhar para contato comercial",
+    "confianca": "alto",
+    "justificativa": "A mensagem expressa claramente o interesse em crédito para capital de giro e fornece o CNPJ da empresa."
+  },
+  {
+    "id": 2,
+    "tipo_solicitacao": "atualizacao_cadastral",
+    "empresa": "Beta Transportes",
+    "cnpj": null,
+    "documentos_identificados": [],
+    "data_mencionada": null,
+    "urgencia": false,
+    "area_sugerida": "Cadastro",
+    "proxima_acao": "encaminhar para cadastro",
+    "confianca": "alto",
+    "justificativa": "A mensagem explicita a necessidade de atualizar os dados cadastrais da empresa devido a alterações no endereço e no quadro societário."
+  },
+  {
+    "id": 3,
+    "tipo_solicitacao": "envio_de_documentacao",
+    "empresa": "Gama Serviços",
+    "cnpj": null,
+    "documentos_identificados": [
+      "contrato social"
+    ],
+    "data_mencionada": null,
+    "urgencia": false,
+    "area_sugerida": "Cadastro",
+    "proxima_acao": "encaminhar para cadastro",
+    "confianca": "alto",
+    "justificativa": "A mensagem explicita o envio de documentação para continuidade da análise."
+  },
+  {
+    "id": 4,
+    "tipo_solicitacao": "solicitacao_de_segunda_via",
+    "empresa": null,
+    "cnpj": null,
+    "documentos_identificados": [
+      "documento"
+    ],
+    "data_mencionada": null,
+    "urgencia": false,
+    "area_sugerida": "Atendimento",
+    "proxima_acao": "encaminhar para operacoes",
+    "confianca": "alto",
+    "justificativa": "A mensagem solicita explicitamente a segunda via de um documento relacionado a uma operação financeira."
+  },
+  {
+    "id": 5,
+    "tipo_solicitacao": "fora_do_escopo",
+    "empresa": null,
+    "cnpj": null,
+    "documentos_identificados": [],
+    "data_mencionada": null,
+    "urgencia": false,
+    "area_sugerida": "N/A",
+    "proxima_acao": "marcar como fora do escopo",
+    "confianca": "alto",
+    "justificativa": "A mensagem trata de manutenção de notebook, que não está relacionada a serviços financeiros."
+  },
+  {
+    "id": 6,
+    "tipo_solicitacao": "duvida_sobre_operacao_financeira",
+    "empresa": "Delta Logística ME",
+    "cnpj": "98.765.432/0001-10",
+    "documentos_identificados": [
+      "boleto"
+    ],
+    "data_mencionada": "15/07",
+    "urgencia": true,
+    "area_sugerida": "Operacoes",
+    "proxima_acao": "encaminhar para operacoes",
+    "confianca": "alto",
+    "justificativa": "A mensagem explicita uma operação financeira com vencimento hoje e solicita urgência para resolver o problema do boleto de pagamento."
+  },
+  {
+    "id": 7,
+    "tipo_solicitacao": "interesse_em_credito_pj",
+    "empresa": "Ômega Indústria",
+    "cnpj": null,
+    "documentos_identificados": [
+      "balanço patrimonial"
+    ],
+    "data_mencionada": null,
+    "urgencia": false,
+    "area_sugerida": "Analise de Credito",
+    "proxima_acao": "encaminhar para contato comercial",
+    "confianca": "alto",
+    "justificativa": "A mensagem expressa claramente o interesse em avaliar uma linha de crédito para expansão da fábrica e envia um documento solicitado."
+  },
+  {
+    "id": 8,
+    "tipo_solicitacao": "pendencia_de_informacao",
+    "empresa": null,
+    "cnpj": null,
+    "documentos_identificados": [],
+    "data_mencionada": null,
+    "urgencia": false,
+    "area_sugerida": "Atendimento",
+    "proxima_acao": "solicitar informacoes complementares",
+    "confianca": "baixo",
+    "justificativa": "A mensagem não informa o assunto da solicitação, apenas pede retorno de contato."
+  }
+]
