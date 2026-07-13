@@ -1,7 +1,7 @@
-from classificador import classificar_mensagem
+from classificador import classificar_com_seguranca
 
-resultado = classificar_mensagem(
-    "Interesse em crédito",
-    "Olá, somos da Alfa Comércio LTDA e queremos crédito para capital de giro. CNPJ 12.345.678/0001-99.",
+resultado = classificar_com_seguranca(
+    "Contato",
+    "Oi, tudo bem? Liguei mais cedo mas não consegui falar com ninguém. Podem me retornar?",
 )
 print(resultado)

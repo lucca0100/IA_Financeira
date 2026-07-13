@@ -52,6 +52,10 @@ REGRAS:
 1. Use SOMENTE os valores listados para tipo_solicitacao, area_sugerida, proxima_acao e confianca.
 2. Extraia dados APENAS se estiverem no texto. Nunca invente empresa, CNPJ ou data.
 3. Se a mensagem tratar de mais de um assunto, classifique pelo assunto principal e use confianca "medio".
-4. Se a mensagem for vaga ou não der para classificar com segurança, use confianca "baixo" e proxima_acao "solicitar informacoes complementares".
+4. IMPORTANTE: se a mensagem NÃO deixar claro qual é o assunto ou a necessidade (ex: apenas pede retorno de ligação, cumprimenta, ou é genérica), você NÃO deve adivinhar o tipo. Nesse caso use: tipo_solicitacao "pendencia_de_informacao", confianca "baixo", proxima_acao "solicitar informacoes complementares" e area_sugerida "Atendimento".
 5. Se o assunto não tiver relação com serviços financeiros, use "fora_do_escopo" e area_sugerida "N/A".
-6. urgencia é true apenas se houver indicação clara de prazo curto ou pedido urgente."""
+6. urgencia é true apenas se houver indicação clara de prazo curto ou pedido urgente.
+
+EXEMPLO DE MENSAGEM VAGA (para calibrar seu julgamento):
+Mensagem: "Oi, podem me ligar de volta? Tentei contato mais cedo."
+Saída correta: tipo_solicitacao "pendencia_de_informacao", confianca "baixo", proxima_acao "solicitar informacoes complementares", justificativa "A mensagem não informa o assunto da solicitação, apenas pede retorno de contato."""
