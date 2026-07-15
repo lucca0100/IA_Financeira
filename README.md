@@ -23,6 +23,7 @@ Se a IA devolver algo fora das regras (categoria inventada, campo ausente, tipo 
 ├── dados/
 │   ├── exemplos_entrada.json   # 8 mensagens (5 do desafio + 3 casos de borda propositais)
 │   └── gabarito.json           # classificação esperada, para medir acurácia
+├── docs/                       # prints de demonstração
 ├── src/
 │   ├── prompt.py               # prompt e categorias permitidas (fonte única de verdade)
 │   ├── classificador.py        # chamada ao LLM via REST + retry + fallback
@@ -44,7 +45,8 @@ Se a IA devolver algo fora das regras (categoria inventada, campo ausente, tipo 
 Pré-requisitos: **Python 3.11+** e uma chave gratuita da API do Groq (https://console.groq.com/keys — não exige cartão).
 
 ```bash
-# 1. Instalar dependências
+# 1. Clonar e instalar dependências
+git clone https://github.com/lucca0100/triagem-ia.git
 cd triagem-ia
 python -m venv venv
 source venv/Scripts/activate        # Windows Git Bash (PowerShell: venv\Scripts\activate | Linux/Mac: source venv/bin/activate)
@@ -67,6 +69,20 @@ uvicorn api:app --app-dir src --reload
 # Documentação interativa: http://127.0.0.1:8000/docs
 ```
 
+## Demonstração
+
+Pipeline processando as 8 mensagens de exemplo:
+
+![Execução do pipeline](docs/pipeline_execucao.jpeg)
+
+Métricas de acurácia contra o gabarito:
+
+![Avaliador](docs/avaliador_acuracia.jpeg)
+
+API REST respondendo via Swagger (note o `"cnpj": null` — a mensagem de teste não continha CNPJ e a IA não inventou o dado):
+
+![API no Swagger](docs/swagger_triagem.jpeg)
+
 ## Como a IA foi usada
 
 - **Modelo:** Llama 3.3 70B via API do Groq, chamado por REST puro (`requests`) no formato OpenAI-compatible — o que torna o código portável para outros provedores com mudanças mínimas.
@@ -88,14 +104,14 @@ uvicorn api:app --app-dir src --reload
 
 A qualidade é medida pelo `avaliador.py`, que compara a saída da IA com um gabarito rotulado manualmente (`dados/gabarito.json`):
 
-- Acurácia do tipo de solicitação: **X/8 (XX%)** ← preencher com o resultado do avaliador
-- Acurácia do nível de confiança: **X/8 (XX%)** ← preencher com o resultado do avaliador
+- **Acurácia do tipo de solicitação: 7/8 (88%)**
+- **Acurácia do nível de confiança: 6/8 (75%)**
 
-Além dos 5 exemplos do enunciado, foram criados 3 casos de borda propositais para estressar a solução. Limitações identificadas e documentadas:
+Os erros medidos concentram-se **exatamente nos casos de borda criados de propósito** para estressar a solução — os 5 exemplos do enunciado foram classificados com 100% de acerto. Limitações identificadas:
 
-- **Mensagens híbridas** (caso 7: envio de documento + interesse em crédito na mesma mensagem): o modelo classifica o assunto principal corretamente, mas nem sempre reduz a confiança para "medio" como instruído no prompt.
-- **Ambiguidade de negócio** (caso 6: boleto não recebido que vence hoje): a mensagem admite leitura como "segunda via" ou "dúvida sobre operação". O gabarito registra a decisão de negócio adotada (segunda via — o pedido central é receber o boleto novamente).
-- **Mensagens vagas** (caso 8): após calibração do prompt, o sistema retorna corretamente confiança "baixo" e "solicitar informacoes complementares" em vez de adivinhar.
+- **Ambiguidade de negócio** (caso 6: boleto não recebido que vence hoje): a mensagem admite leitura como "segunda via" ou "dúvida sobre operação". O modelo escolheu a segunda; o gabarito registra a decisão de negócio adotada (segunda via — o pedido central do cliente é receber o boleto novamente). Casos assim, em produção, se beneficiariam de revisão humana.
+- **Mensagens híbridas** (caso 7: envio de documento + interesse em crédito na mesma mensagem): o modelo classifica o assunto principal corretamente, mas não reduz a confiança para "medio" como instruído no prompt.
+- **Mensagens vagas** (caso 8): após calibração do prompt com exemplo few-shot, o sistema retorna corretamente confiança "baixo" e "solicitar informacoes complementares" em vez de adivinhar.
 
 ## O que eu melhoraria em uma versão real
 
