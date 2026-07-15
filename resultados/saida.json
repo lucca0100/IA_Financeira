@@ -10,7 +10,7 @@
     "area_sugerida": "Comercial",
     "proxima_acao": "encaminhar para contato comercial",
     "confianca": "alto",
-    "justificativa": "A mensagem expressa claramente o interesse em crédito para capital de giro e fornece o CNPJ da empresa."
+    "justificativa": "A mensagem expressa claramente o interesse em crédito para capital de giro da empresa Alfa Comércio LTDA."
   },
   {
     "id": 2,
@@ -38,7 +38,7 @@
     "area_sugerida": "Cadastro",
     "proxima_acao": "encaminhar para cadastro",
     "confianca": "alto",
-    "justificativa": "A mensagem explicita o envio de documentação para continuidade da análise."
+    "justificativa": "A mensagem explicita o envio de contrato social para continuidade da análise."
   },
   {
     "id": 4,
@@ -81,7 +81,7 @@
     "area_sugerida": "Operacoes",
     "proxima_acao": "encaminhar para operacoes",
     "confianca": "alto",
-    "justificativa": "A mensagem explicita uma operação financeira com vencimento hoje e solicita urgência para resolver o problema do boleto de pagamento."
+    "justificativa": "A mensagem explicita uma operação financeira com vencimento hoje e solicita urgência para resolver o problema com o boleto de pagamento."
   },
   {
     "id": 7,
